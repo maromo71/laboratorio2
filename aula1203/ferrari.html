@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#ffb4a8",
+                        "inverse-primary": "#c00100",
+                        "on-primary-container": "#5c0000",
+                        "on-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-secondary": "#2f3131",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "secondary-fixed": "#e3e2e2",
+                        "surface-bright": "#3a3939",
+                        "outline": "#b18780",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary": "#3a3000",
+                        "primary": "#ffb4a8",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-tertiary-container": "#4c3f00",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#484949",
+                        "tertiary": "#e9c400",
+                        "primary-fixed": "#ffdad4",
+                        "on-primary-fixed-variant": "#930100",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-surface-variant": "#ebbbb4",
+                        "surface-container-highest": "#353534",
+                        "primary-container": "#ff5540",
+                        "background": "#131313",
+                        "outline-variant": "#603e39",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#221b00",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#410000",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#c7c6c6",
+                        "on-background": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .telemetry-line {
+            height: 0.5px;
+            background-color: #b18780;
+            opacity: 0.15;
+        }
+
+        .text-glow:hover {
+            text-shadow: 0 0 8px rgba(255, 180, 168, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav
+        class="sticky top-0 z-50 bg-surface border-b border-outline-variant/15 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-12">
+            <span class="font-headline text-xl font-bold tracking-tighter">Ferrari Brazil</span>
+            <div class="hidden lg:flex items-center gap-8">
+                <a class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary"
+                    href="#">Models</a>
+                <a class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary"
+                    href="#">Lifestyle</a>
+                <a class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary"
+                    href="#">Racing</a>
+                <a class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary"
+                    href="#">Dealership</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center border-b border-outline-variant/30 pb-1 mr-4">
+                <span class="material-symbols-outlined text-sm opacity-60 mr-2">search</span>
+                <span class="text-xs font-label uppercase tracking-widest opacity-40">Explore lineup</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hover:text-primary"><span class="material-symbols-outlined">person</span></button>
+                <button class="hover:text-primary"><span class="material-symbols-outlined">shopping_bag</span></button>
+            </div>
+        </div>
+    </nav>
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section
+            class="relative h-[60vh] flex items-end px-6 lg:px-12 pb-20 overflow-hidden bg-surface-container-lowest">
+            <div class="absolute inset-0 opacity-40">
+                <img alt="Ferrari detail" class="w-full h-full object-cover grayscale brightness-50"
+                    data-alt="Close up of Ferrari Rosso Corsa paint and curves"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMp_X97Dyb3Vg8cl6NNKXTWV2DWQ-88fheUFUboqvKk2bQJ9McbD05ihB6BlmQwf3FMu9-aPx56AUoxNmZoBg4A_j15JXeBUlg3z5UofRMykBR_DN56EkwxOhMDjYtDLBw7REoDfJrerok4rDdIREFwSIZzkPh3olKqSRYCdgn02sJ0L3-Ef77TzaYO3VflbUXY7re8vedHsdsEAFdZl3wEn8Ai6wKuDmkC9Sqhc-nVFlMAaYVRyxal5TkQ-SBnevLGlzf4TdBxNA" />
+            </div>
+            <div class="relative z-10 max-w-4xl">
+                <div class="telemetry-line w-24 mb-6"></div>
+                <h1 class="font-headline text-5xl lg:text-8xl font-bold uppercase tracking-tighter leading-none mb-4">
+                    The <span class="text-primary italic">Collection</span>
+                </h1>
+                <p class="font-body text-lg lg:text-xl max-w-xl opacity-70">
+                    A curated selection of kinetic art. Engineered for the connoisseurs of Via Italia.
+                </p>
+            </div>
+        </section>
+        <!-- Model Catalog Grid -->
+        <section class="px-6 lg:px-12 py-24 space-y-24 bg-surface">
+            <!-- Category Header -->
+            <div class="flex justify-between items-end border-b border-outline-variant/15 pb-6">
+                <div>
+                    <span class="font-label text-xs uppercase tracking-[0.3em] text-tertiary mb-2 block">Performance
+                        Hierarchy</span>
+                    <h2 class="font-headline text-4xl font-medium">Scuderia DNA</h2>
+                </div>
+                <div class="text-right">
+                    <span class="font-label text-xs uppercase opacity-40">Filter by series</span>
+                </div>
+            </div>
+            <!-- Bento Model Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- SF90 Card (Large) -->
+                <div class="md:col-span-8 group relative overflow-hidden bg-surface-container-high aspect-[16/9]">
+                    <img alt="SF90 Stradale"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                        data-alt="Ferrari SF90 Stradale in a dark studio setting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaa8Ld7iu9DR1gnsdaVy7plgRBYaWEF5dX1VueDs_azavzuZqArcr8-4LWObtgCId9wTD9exJM_a9pw90lTSbo0XnbnD8zTtotbljYsCzepWeq2Ym2Og2zMxpc6xBXQ5GH3naW0BDTTzGXlOibc7llses3o77MC0zDUUgb0os-nxWkzOpVi8Y_nQNrgaqKST0qSsjreDQX3lTpb4j2B_LwQy_YOIHF6sXvRYx-3VK6x7MhfHq8KXMUUocxnP8a8KZO7KWBg5ol_ds" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+                        <div>
+                            <span class="font-label text-xs uppercase tracking-widest text-primary mb-2 block">Hybrid
+                                Power</span>
+                            <h3 class="font-headline text-4xl font-bold">SF90 Stradale</h3>
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-right">
+                            <p class="font-label text-[10px] uppercase tracking-widest mb-2">Exclusividade Via Italia
+                            </p>
+                            <button
+                                class="bg-primary text-on-primary px-6 py-2 text-xs font-bold uppercase tracking-widest hover:brightness-110">Configure</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Technical Specs (Sidebar) -->
+                <div
+                    class="md:col-span-4 flex flex-col justify-between p-8 bg-surface-container-low border-l border-outline-variant/15">
+                    <div>
+                        <div class="telemetry-line w-full mb-8"></div>
+                        <h4 class="font-label text-xs uppercase tracking-[0.2em] opacity-40 mb-6">Telemetry Data</h4>
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-baseline">
+                                <span class="text-sm opacity-60">0-100 KM/H</span>
+                                <span class="font-headline text-2xl text-tertiary">2.5s</span>
+                            </div>
+                            <div class="flex justify-between items-baseline">
+                                <span class="text-sm opacity-60">Max Power</span>
+                                <span class="font-headline text-2xl">1000 cv</span>
+                            </div>
+                            <div class="flex justify-between items-baseline">
+                                <span class="text-sm opacity-60">Top Speed</span>
+                                <span class="font-headline text-2xl">340 km/h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <p class="text-sm opacity-50 font-light leading-relaxed">
+                            The pinnacle of innovation. A perfect synthesis of internal combustion and electric
+                            propulsion.
+                        </p>
+                    </div>
+                </div>
+                <!-- Roma Card (Medium) -->
+                <div class="md:col-span-6 group relative overflow-hidden bg-surface-container-high aspect-square">
+                    <img alt="Ferrari Roma"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 grayscale group-hover:grayscale-0"
+                        data-alt="Silver Ferrari Roma in an elegant urban setting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1PS-w8GOzn_ZMUcvgNID36YM9s4tlY66ZMow2IyxhP7jWgDEMv4IjGh7iIIO8zMSaVPTjZsEDLtoKFQmib5V8VJzK0qLbnxm5eTfGEhEH6OqQ-QFd0nT3_zWUg2XcrwqwxRJMnB-YQ33t1T3RJ1-Z9oIC9qI4RVWbK8d_ZZP19QPhVSDyRHrMQKgRSbsx49zfOKPOglA6DESpg1MfgtKUjK4oriCO4Hq1uAuz8hXHkcMpiPPYkvloP8vRMTg0u_meLgZyTJjzj1E" />
+                    <div class="absolute inset-0 flex flex-col justify-between p-8">
+                        <span class="font-label text-xs uppercase tracking-widest self-end">La Nuova Dolce Vita</span>
+                        <div>
+                            <h3 class="font-headline text-3xl font-bold mb-4">Roma Spider</h3>
+                            <div class="w-0 group-hover:w-full h-[1px] bg-primary transition-all duration-700"></div>
+                            <p
+                                class="mt-4 font-label text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                                Exclusividade Via Italia</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Purosangue Card (Medium) -->
+                <div class="md:col-span-6 group relative overflow-hidden bg-surface-container-high aspect-square">
+                    <img alt="Ferrari Purosangue"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70"
+                        data-alt="Dark Ferrari Purosangue highlighting its unique silhouette"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAffC6r30vBFnuOAZNXbnai4w_gykqnYdlArjJmao6c-ok2VdhyJbUeWlcjPYIYJ89Wb5D4D3VdtMwi0uv6EuIp0-C4SqIcSjs3UahXMt_QO28Qz3eRLhPy4KKIVAtFsGHbPLwQSK-g4awuaDPF3KUFX8IzVqg4U5xc3uVHzeblFtNZJYnTIPp6qTuR-i9RsFR-mOMLHkj358FezLCVMKnhyunhRqoJZ2nYJa9oaLMtSQEIYZQ5GKY_d0ifzUVxAWGOyMT1WU3HFCQ" />
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8">
+                        <span class="font-label text-xs uppercase tracking-[0.4em] mb-4 opacity-60">Unexpected
+                            Power</span>
+                        <h3 class="font-headline text-4xl font-bold uppercase mb-8">Purosangue</h3>
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <p class="font-label text-[10px] uppercase tracking-widest mb-6">Exclusividade Via Italia
+                            </p>
+                            <button
+                                class="border border-on-surface px-8 py-3 text-xs uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-colors">Discover
+                                more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Progress/Status Section -->
+        <section class="px-6 lg:px-12 py-12 bg-surface-container-lowest">
+            <div class="max-w-xl">
+                <div class="flex justify-between items-end mb-4">
+                    <span class="font-label text-xs uppercase tracking-widest text-primary">Scuderia Progress</span>
+                    <span class="font-label text-xs opacity-60">65%</span>
+                </div>
+                <div class="h-1 bg-surface-container-highest w-full mb-4">
+                    <div class="h-full bg-primary" style="width: 65%;"></div>
+                </div>
+                <p class="text-[10px] font-label uppercase tracking-widest opacity-40">Loading performance...</p>
+            </div>
+        </section>
+    </main>
+    <!-- Extended FAB -->
+    <div class="fixed bottom-8 right-8 z-40">
+        <button
+            class="flex items-center gap-3 bg-surface-container-highest hover:bg-surface-bright px-6 py-4 border border-outline-variant/30 group transition-all">
+            <span
+                class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">support_agent</span>
+            <span class="font-label text-sm uppercase tracking-widest font-medium">Concierge</span>
+        </button>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant/10 px-6 lg:px-12 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div class="lg:col-span-1">
+                <span class="font-headline text-2xl font-bold tracking-tighter">Ferrari Brazil</span>
+                <p class="mt-6 text-sm opacity-50 font-light leading-relaxed">
+                    Via Italia Official Dealership. Bringing the essence of Maranello to Brazil with uncompromising
+                    standards.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Navigation</span>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Models</a>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Lifestyle</a>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Racing</a>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Dealership</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Legal</span>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Legal</a>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Contact</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Social</span>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">TikTok</a>
+                <a class="text-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/5">
+            <span class="text-[10px] font-label uppercase tracking-widest opacity-40">© 2024 Ferrari S.p.A. - All rights
+                reserved. Via Italia Dealership.</span>
+            <div class="flex gap-8 mt-4 md:mt-0">
+                <span class="material-symbols-outlined text-sm opacity-40">language</span>
+                <span class="text-[10px] font-label uppercase tracking-widest opacity-40">Brazil / Portuguese</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

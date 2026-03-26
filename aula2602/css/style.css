@@ -1,59 +1,119 @@
+/* Importando uma fonte geométrica moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root {
+    --tesla-red: #E82127;
+    --tesla-black: #171a20;
+    --tesla-grey: #393c41;
+    --bg-light: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #212529;
+    background-color: var(--bg-light);
+    color: var(--tesla-grey);
+    -webkit-font-smoothing: antialiased;
 }
+
+/* Cabeçalho Minimalista */
 header {
-    background-color: #1a3a5a;
-    color: #ffffff;
-    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    color: var(--tesla-black);
+    padding: 20px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
 }
+
+nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h1 {
-    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     font-weight: 700;
+    color: var(--tesla-black);
 }
-h1 a {
-    text-decoration: none;
-    color: #ffffff;
-}
+
+/* Navegação Estilo Tesla */
 nav ul {
     list-style: none;
-    padding: 20px 0;
+    padding: 0;
     margin: 0;
 }
+
 nav ul li {
     display: inline-block;
-    margin-right: 20px;
-    background-color: #c0392b;
-    border-radius: 6px;
-    transition: 0.3s ease;
+    margin-left: 10px;
+    background-color: transparent; /* Remove o fundo sólido antigo */
+    border-radius: 4px;
+    transition: var(--transition);
 }
-nav ul li:hover {
-    background-color: #a93226;
-    transform: translateY(-2px);
-}
+
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
+    color: var(--tesla-black);
+    padding: 8px 16px;
     display: inline-block;
-    font-weight: bold;
-}
-main {
-    padding: 20px;
-    line-height: 1.6;
-    margin-bottom: 60px;
-}
-footer {
-    background-color: #1a3a5a;
-    color: #ffffff;
-    padding: 15px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    font-weight: 500;
     font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+nav ul li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: none; /* Estilo Tesla não usa saltos bruscos */
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+}
+
+.fake-text h2 {
+    font-size: 2.5rem;
+    color: var(--tesla-black);
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.fake-text p {
+    font-size: 1.1rem;
+    color: var(--tesla-grey);
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Rodapé Sutil */
+footer {
+    background-color: var(--bg-light);
+    color: #a2a3a5;
+    padding: 30px;
+    text-align: center;
+    position: relative; /* Mudança de fixed para relativo para melhor fluxo */
+    width: 100%;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-top: 1px solid #eeeeee;
+}
+
+/* Destaque opcional (Tesla Red) em links específicos se necessário */
+nav ul li:last-child a {
+    color: var(--tesla-red);
 }

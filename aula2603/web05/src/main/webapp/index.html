@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Jogador</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Jogadores [ Cadastro ]</span>
+    </nav>
+    <div class="container">
+    <h2>Dados do Jogador</h2>
+    <form class="form-group" action="/times" method="post">
+        <!--campo nome -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <label for="nomeJogador">Nome do Jogador: </label>
+                <input class="form-control" type="text" name="nomeJogador" id="nomeJogador">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!--Fim do campo nome-->
+        <!--campo apelido -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <label for="apelidoJogador">Apelido do Jogador: </label>
+                <input class="form-control" type="text" name="apelidoJogador" id="apelidoJogador">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!--Fim do campo apelido-->
+        <!--campo posição -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <label for="posicaoJogador">Posição do Jogador: </label>
+                <input class="form-control" type="text" name="posicaoJogador" id="posicaoJogador">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!--Fim do campo posicao-->
+        <!--campo idade -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <label for="idadeJogador">Idade do Jogador: </label>
+                <input class="form-control" type="number" name="idadeJogador" id="idadeJogador">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!--Fim do campo idade-->
+        <!-- botões de enviar e limpar -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <br>
+                <input class="btn btn-success" type="submit" value="Enviar">
+                <input class="btn btn-secondary" type="reset" value="Limpar">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

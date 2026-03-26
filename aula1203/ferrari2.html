@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#ffb4a8",
+                        "inverse-primary": "#c00100",
+                        "on-primary-container": "#5c0000",
+                        "on-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-secondary": "#2f3131",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "secondary-fixed": "#e3e2e2",
+                        "surface-bright": "#3a3939",
+                        "outline": "#b18780",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary": "#3a3000",
+                        "primary": "#ffb4a8",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-tertiary-container": "#4c3f00",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#484949",
+                        "tertiary": "#e9c400",
+                        "primary-fixed": "#ffdad4",
+                        "on-primary-fixed-variant": "#930100",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-surface-variant": "#ebbbb4",
+                        "surface-container-highest": "#353534",
+                        "primary-container": "#ff5540",
+                        "background": "#131313",
+                        "outline-variant": "#603e39",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#221b00",
+                        "tertiary-container": "#c9a900",
+                        "surface-tint": "#ffb4a8",
+                        "on-primary": "#690100",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#410000",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#c7c6c6",
+                        "on-background": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .kinetic-gradient {
+            background: linear-gradient(45deg, #ffb4a8 0%, #ff5540 100%);
+        }
+
+        .ghost-border {
+            border: 0.5px solid rgba(177, 135, 128, 0.15);
+        }
+
+        .telemetry-line {
+            height: 0.5px;
+            background-color: #b18780;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <span class="font-headline text-xl font-bold tracking-tighter text-on-surface">Ferrari Brazil</span>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a class="font-label text-sm uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Models</a>
+                    <a class="font-label text-sm uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Lifestyle</a>
+                    <a class="font-label text-sm uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Racing</a>
+                    <a class="font-label text-sm uppercase tracking-widest hover:text-primary transition-colors text-primary"
+                        href="#">Dealership</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex items-center bg-surface-container-high px-4 py-2 ghost-border">
+                    <span class="material-symbols-outlined text-sm mr-2" data-icon="search">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm font-label w-48" placeholder="Search"
+                        type="text" />
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 hover:bg-surface-container-highest transition-colors">
+                        <span class="material-symbols-outlined" data-icon="person">person</span>
+                    </button>
+                    <button class="p-2 hover:bg-surface-container-highest transition-colors">
+                        <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] flex items-center overflow-hidden bg-surface-container-lowest">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent z-10"></div>
+                <img alt="Ferrari Showroom" class="w-full h-full object-cover opacity-60"
+                    data-alt="Modern Ferrari dealership interior with red supercars"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb8LvTi2t78AU6N69JRpd5TvQ8gVUMCrzT7dKMsrHlSxR2M-k96ETFYYxg6ElkIy8RSpOK24wSJto43Q_8UwTZQ1Jb5Y-Qg889Xy9qP3xDy3xmSbbQK8B6Hw9Di3P98JbjzbhL7zJ4CuT3S9aDKrKwNaTKzr6SP_vfQ7MkDm4kGIrCUSEva4fVF-hyeMWdOmvSOZjBPDiIbPFp15cFnB8XOt0QfH2AZdXFf68hrDEgbSOAqgCJD1S__6wMyKa8FwIVTCZCSKVKoBk" />
+            </div>
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="max-w-2xl">
+                    <div class="telemetry-line w-24 mb-8"></div>
+                    <h1 class="font-headline text-6xl md:text-8xl font-bold leading-none mb-6">VIA ITALIA<br /><span
+                            class="text-primary">SÃO PAULO</span></h1>
+                    <p class="text-xl text-on-surface-variant font-light mb-10 max-w-md">The heartbeat of Ferrari in
+                        Brazil. Experience the pinnacle of automotive excellence at Avenida Brasil.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="kinetic-gradient text-on-primary px-10 py-4 font-label uppercase tracking-widest text-sm font-bold shadow-lg shadow-primary/20">Book
+                            a Visit</button>
+                        <button
+                            class="ghost-border text-on-surface px-10 py-4 font-label uppercase tracking-widest text-sm font-bold hover:bg-on-surface/5">Explore
+                            Showroom</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Grid: The Piazza Experience -->
+        <section class="py-24 bg-surface px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                    <div>
+                        <h2 class="font-headline text-4xl font-bold mb-4 uppercase tracking-tight">The Piazza Showroom
+                        </h2>
+                        <div class="telemetry-line w-full"></div>
+                    </div>
+                    <p class="text-on-surface-variant max-w-md font-light">Inspired by the great Italian piazzas, our
+                        São Paulo headquarters is a cathedral of performance and design.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 h-full md:h-[700px]">
+                    <div class="md:col-span-8 relative overflow-hidden group">
+                        <img alt="Showroom Main Floor"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Wide angle view of Ferrari showroom floor"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_DnFV4myn7biy4HmUkbc31UcwU12CujXlWal_Qu41JWySYtBI1k6DQr34B3ezRqFOzc18PyguNC74iFobuqMYpIwMJzqs7CBGjz60dSf4NU63qxPDQTl7ZffMPjNILRuhe_7KV5SsEQ-s1A3I6tIPGQRP8K97X_e9a9JQLzmHva8_V8nvUmaZgLT6PGHEQ3dBDHB4LoXdoFljSopZqsBYw7diR1i8oydCtaPlzMT1y-HPhy-SrMI9Elc9cmv0tRuyv1W5VRH6f9k" />
+                        <div class="absolute bottom-0 left-0 p-8 glass-panel w-full">
+                            <span class="font-label text-xs uppercase tracking-widest text-tertiary mb-2 block">Iconic
+                                space</span>
+                            <h3 class="font-headline text-2xl font-bold">Main Gallery</h3>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 grid grid-rows-2 gap-4">
+                        <div class="relative overflow-hidden group">
+                            <img alt="Atelier Room"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                data-alt="Ferrari personalization atelier with leather samples"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwubLdf3k5uY0mk2Pi-lQ1Kso4l1g37iTwq1PZBcQMhXbYLQm0SOTTw2iv3IsiFEV8AiV3xB-2cXyLtznIGqPLGWHhkDsPIZX0uHNEozMr1sF9fgijnhEsbLUjDQAfrSvBzK-s3oMgwsqF0cGsDkhWBjLbqkkD7KjiT-JXwc8g0bDyhrmjKSlQ4R9zpRs97vdstMObTzXvp0PXVt9L_pjRku3nUNlsqC5-7J2T25G_s2Exk1JG_3dOsrSa6e3EiKE42mHMK21mb20" />
+                            <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors">
+                            </div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="font-headline text-xl font-bold uppercase">Atelier</h3>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-high p-8 flex flex-col justify-between ghost-border">
+                            <div>
+                                <span class="material-symbols-outlined text-primary text-4xl mb-4"
+                                    data-icon="location_on">location_on</span>
+                                <h3 class="font-headline text-xl font-bold mb-2">Avenida Brasil, 1769</h3>
+                                <p class="text-on-surface-variant text-sm font-light">Jardim América, São Paulo -
+                                    SP<br />01431-001, Brazil</p>
+                            </div>
+                            <a class="text-primary font-label text-xs uppercase tracking-widest font-bold flex items-center gap-2 group"
+                                href="#">
+                                Open in Maps
+                                <span
+                                    class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                                    data-icon="arrow_forward">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Interactive Map Section -->
+        <section class="bg-surface-container-lowest py-24 px-6 border-y border-outline-variant/10">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/3">
+                    <h2 class="font-headline text-4xl font-bold mb-8 uppercase">Find Us</h2>
+                    <div class="space-y-8">
+                        <div class="p-6 bg-surface-container-low ghost-border">
+                            <h4 class="font-label text-xs uppercase tracking-widest text-primary mb-4">Opening Hours
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-outline-variant/10 pb-2">
+                                    <span class="text-on-surface-variant">Mon - Fri</span>
+                                    <span>09:00 - 18:00</span>
+                                </div>
+                                <div class="flex justify-between border-b border-outline-variant/10 pb-2">
+                                    <span class="text-on-surface-variant">Saturday</span>
+                                    <span>09:00 - 13:00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-on-surface-variant">Sunday</span>
+                                    <span class="text-error">Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-4 items-start">
+                                <span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+                                <div>
+                                    <p class="font-label text-sm uppercase tracking-wider">Phone</p>
+                                    <p class="text-on-surface-variant">+55 11 3060-9110</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+                                <div>
+                                    <p class="font-label text-sm uppercase tracking-wider">Email</p>
+                                    <p class="text-on-surface-variant">contato@viaitalia.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-2/3 h-[500px] bg-surface-container relative ghost-border overflow-hidden">
+                    <img alt="Map location" class="w-full h-full object-cover grayscale brightness-50 contrast-125"
+                        data-alt="Stylized dark map showing São Paulo city grid" data-location="São Paulo, Brazil"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUfLaYDUMuzhb1pkod0maC7WwjqtktkEHJzn3jZD7DVpZXU3xv4vvC2R2B5jaOCy68Q96yEPOmycw_jYWUaryNYsUyz8rLxbiJ3b8alp_nygHE-ud5ndoa2TuHK79CM9ACh9JFCMIID2unEVSkVhRxtTZaBXS5-XNJ5_enHt3gHCNXImpAuCR4hLttA1nB-RTfNeQjQh84r1mHtlcYuqPYIcll8Y_ZcE7a4YHnfW7OYuHo5iiCVvXxGLovvzfrR8aYm6zZDb9UoDw" />
+                    <div class="absolute inset-0 bg-primary/5"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-primary/20 rounded-full blur-xl"></div>
+                            <span class="material-symbols-outlined text-primary text-5xl relative z-10"
+                                data-icon="location_on" data-weight="fill"
+                                style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Exclusive Services -->
+        <section class="py-24 bg-surface px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-headline text-5xl font-bold uppercase mb-4">Serviços Exclusivos</h2>
+                    <p class="text-on-surface-variant tracking-widest font-label uppercase text-sm">Engineered for
+                        Longevity</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="group">
+                        <div class="aspect-video overflow-hidden mb-6 ghost-border">
+                            <img alt="Service center"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                data-alt="Professional mechanic working on a Ferrari engine"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA58QRyM6rd7W2e9kt7aVdqVvCIX8dNmiBGwRSI52vmiecpaMlSsjlqhki6ENfC-HyqxOVGZHJAFl0bezH3P2EGsHk2GTs8skrLzenoxO32dm0P_Gdx22RiZWS2aFtsjk_hx8HT4IjpzxjT084s3hwt5RPkiVPbLxlfxAdqrde54lQWTMHFYLU3p8Bzwefxq7p_Befse_WVBWsIhOw2z2r4PP2PVRpvRd_mHobsN-2DMH8ZTBGrTgTIiD2Z0zMIKn1DDce4BgINQbY" />
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Ferrari Maintenance
+                            </h3>
+                            <span
+                                class="bg-surface-container-highest px-3 py-1 font-label text-[10px] uppercase tracking-tighter ghost-border">Technical</span>
+                        </div>
+                        <p class="text-on-surface-variant mb-6 font-light">Ensure your Ferrari continues to deliver peak
+                            performance with our certified technicians and original parts.</p>
+                        <a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest font-bold group"
+                            href="#">
+                            Schedule Service
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                                data-icon="trending_flat">trending_flat</span>
+                        </a>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-video overflow-hidden mb-6 ghost-border">
+                            <img alt="Ferrari Approved"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                data-alt="Pre-owned red Ferrari in a pristine garage"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHJGcIavfAzXwZI15LiyZwdrkpbEV2QCL2Ux-gvrW5MSKN10WubLGPZaYL6KihyLhTqqOIauuwu2bqNi1MOLOq2OBgAtyhFwZjh828Skp174AQmitxO9GOFoqKWQXHVA5lkoRGiUaj2nH8fdo_Ss3LryziOTUyBYHr9uz9tJSLRcjqlVzXz6GSSk8wjKsKskeVDzix1DOR46YMQlZwIb-n7oesAizuWaCuFcxeRwJgDeKmmxY9Aje6ltQjbLcUJtn0ksqMR_ZvNiE" />
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Ferrari Approved</h3>
+                            <span
+                                class="bg-tertiary/10 text-tertiary px-3 py-1 font-label text-[10px] uppercase tracking-tighter border border-tertiary/20">Certified</span>
+                        </div>
+                        <p class="text-on-surface-variant mb-6 font-light">The pre-owned certification program designed
+                            to guarantee maximum security and peace of mind to new owners.</p>
+                        <a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest font-bold group"
+                            href="#">
+                            View Inventory
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                                data-icon="trending_flat">trending_flat</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Concierge Form -->
+        <section class="bg-surface-container-low py-24 px-6" id="concierge">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-surface-dim p-12 ghost-border relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full"></div>
+                    <div class="relative z-10">
+                        <h2 class="font-headline text-4xl font-bold uppercase mb-2">Private Concierge</h2>
+                        <p class="text-on-surface-variant mb-12 font-light">Leave your details and our team will contact
+                            you for a personalized experience.</p>
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Full
+                                    Name</label>
+                                <input
+                                    class="bg-transparent border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 p-0 pb-2 transition-colors"
+                                    type="text" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Email
+                                    Address</label>
+                                <input
+                                    class="bg-transparent border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 p-0 pb-2 transition-colors"
+                                    type="email" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Phone
+                                    Number</label>
+                                <input
+                                    class="bg-transparent border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 p-0 pb-2 transition-colors"
+                                    type="tel" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Interest</label>
+                                <select
+                                    class="bg-transparent border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 p-0 pb-2 transition-colors">
+                                    <option class="bg-surface">New Models</option>
+                                    <option class="bg-surface">Ferrari Approved</option>
+                                    <option class="bg-surface">Technical Service</option>
+                                    <option class="bg-surface">Lifestyle &amp; Events</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2 flex flex-col gap-2">
+                                <label
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Message
+                                    (Optional)</label>
+                                <textarea
+                                    class="bg-transparent border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 p-0 pb-2 transition-colors resize-none"
+                                    rows="3"></textarea>
+                            </div>
+                            <div class="md:col-span-2 mt-8">
+                                <button
+                                    class="w-full kinetic-gradient py-5 font-label uppercase tracking-[0.2em] font-bold text-on-primary"
+                                    type="submit">Send Inquiry</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ProgressBar (System Loader Simulation) -->
+        <div class="fixed bottom-0 left-0 w-full z-40 bg-surface/80 backdrop-blur">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2">
+                <div
+                    class="flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
+                    <span>Scuderia Progress</span>
+                    <span>65%</span>
+                </div>
+                <div class="w-full h-[2px] bg-surface-container-highest">
+                    <div class="h-full bg-primary" style="width: 65%;"></div>
+                </div>
+                <div class="text-[9px] font-label text-outline text-right">Loading performance...</div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest pt-24 pb-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+                <div class="md:col-span-1">
+                    <h5 class="font-headline text-2xl font-bold mb-6">Ferrari Brazil</h5>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">The official representative of Ferrari in
+                        Brazil since 1996. Dedicated to the passion of the Prancing Horse.</p>
+                </div>
+                <div>
+                    <h6 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">Navigation</h6>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a class="hover:text-primary transition-colors" href="#">Models</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Lifestyle</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Racing</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Dealership</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">Information</h6>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Legal</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">Social</h6>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#">TikTok</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors flex items-center gap-2"
+                                href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-on-surface-variant">© 2024 Ferrari S.p.A. - All rights reserved. Via Italia
+                    Dealership.</p>
+                <div class="flex gap-8">
+                    <span class="telemetry-line w-12 self-center"></span>
+                    <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Engineered by
+                        Via Italia</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FAB -->
+    <a class="fixed bottom-24 right-8 z-50 flex items-center gap-3 kinetic-gradient px-6 py-4 shadow-2xl hover:brightness-110 transition-all cursor-pointer group"
+        href="#concierge">
+        <span class="material-symbols-outlined text-on-primary" data-icon="support_agent">support_agent</span>
+        <span class="font-label uppercase tracking-widest text-sm font-bold text-on-primary">Concierge</span>
+    </a>
+</body>
+
+</html>
