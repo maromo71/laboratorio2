@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="utf-8" />
@@ -13,12 +14,27 @@
 
 <body>
     <div class="container">
+        <!-- Trecho de código acrescido para exibir o nome do usuário logado -->
+        <div class="d-flex justify-content-end py-3 border-bottom">
+            <div sec:authorize="isAuthenticated()" class="align-middle">
+                <span class="me-2">User: <strong sec:authentication="name">Nome</strong></span>
+                <form th:action="@{/logout}" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Sair</button>
+                </form>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <a th:href="@{/login}" class="btn btn-sm btn-outline-primary">Entrar no Sistema</a>
+            </div>
+        </div>
+
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Product List</h1>
             <p class="col-md-8 fs-4">
                 List of products available today for sale
             </p>
-            <a class="btn btn-primary btn-lg" href="/new">Create New Product</a>
+            <!--<a class="btn btn-primary btn-lg" href="/new">Create New Product</a>-->
+            <a sec:authorize="hasAuthority('ROLE_ADMIN')" class="btn btn-primary btn-lg" href="/new">Create New
+                Product</a>
         </div>
         <div class="container-fluid">
             <div th:replace="~{alert}"></div>
@@ -32,7 +48,8 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Category</th>
-                        <th>Actions</th>
+                        <!-- Modificado abaixo (Actions)-->
+                        <th sec:authorize="hasAuthority('ROLE_ADMIN')">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +61,7 @@
                         <td class="text-end" th:text="${{product.price}}">Price</td>
                         <td th:text="${product.quantity}">Quantity</td>
                         <td th:text="${product.category}">Category</td>
-                        <td>
+                        <td sec:authorize="hasAuthority('ROLE_ADMIN')">
                             <a class="btn btn-primary oi oi-brush" title="Edit Record!"
                                 th:href="@{'/edit/'+ ${product.id}}" role="button">
                             </a>

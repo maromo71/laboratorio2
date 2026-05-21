@@ -68,4 +68,9 @@ public class ProductController {
         service.delete(id);
         return "redirect:/";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login"; // Retorna o arquivo login.html que criaremos abaixo
+    }
 }
